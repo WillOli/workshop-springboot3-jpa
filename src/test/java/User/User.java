@@ -1,23 +1,20 @@
 package User;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
-    
-    private String id;
+
+    private Long id;
     private String name;
     private String email;
     private String phone;
     private String password;
 
-    /*Construtor vazio*/
     public User() {
-
     }
 
-    public User(String id, String name, String email, String phone, String password) {
+    public User(Long id, String name, String email, String phone, String password) {
         super();
         this.id = id;
         this.name = name;
@@ -26,34 +23,43 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
-    public void setId() {
+
+    public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
-    public void setName() {
+
+    public void setName(String name) {
         this.name = name;
     }
+
     public String getEmail() {
         return email;
     }
-    public void setEmail() {
+
+    public void setEmail(String email) {
         this.email = email;
     }
+
     public String getPhone() {
         return phone;
     }
-    public void setPhone() {
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getPassword() {
         return password;
     }
-    public void setPassword() {
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -61,7 +67,7 @@ public class User implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null)? 0 : id.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -73,11 +79,11 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other  = (User) obj;
+        com.willdev.course.User.User other = (com.willdev.course.User.User) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
-        }else if (!id.equals(other.id))
+        } else if (!id.equals(other.id))
             return false;
         return true;
     }

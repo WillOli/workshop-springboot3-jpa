@@ -1,6 +1,6 @@
 package com.willdev.course.services;
 
-import com.willdev.course.User.User;
+import com.willdev.course.entities.User;
 import com.willdev.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.willdev.course.resources;
 
-import com.willdev.course.User.User;
+import com.willdev.course.entities.User;
 import com.willdev.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

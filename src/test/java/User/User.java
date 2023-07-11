@@ -79,7 +79,7 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        com.willdev.course.User.User other = (com.willdev.course.User.User) obj;
+        com.willdev.course.entities.User other = (com.willdev.course.entities.User) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

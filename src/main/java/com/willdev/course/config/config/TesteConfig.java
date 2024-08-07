@@ -1,9 +1,13 @@
 package com.willdev.course.config.config;
 
+import com.willdev.course.entities.Category;
 import com.willdev.course.entities.Order;
+import com.willdev.course.entities.Category;
 import com.willdev.course.entities.User;
 import com.willdev.course.entities.enums.OrderStatus;
+import com.willdev.course.repositories.CategoryRepository;
 import com.willdev.course.repositories.OrderRepository;
+import com.willdev.course.repositories.CategoryRepository;
 import com.willdev.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,13 +21,23 @@ import java.util.Arrays;
 @Profile("test")
 public class TesteConfig implements CommandLineRunner {
     @Autowired
-    private UserRepository userRepository;
+    private CategoryRepository categoryRepository;
 
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Eletroncis");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+
+
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "98888888", "123456");
         User u2 = new User(null, "Alex Green", "alex@gmail.com", "85475588", "123540");
 
@@ -31,7 +45,11 @@ public class TesteConfig implements CommandLineRunner {
         Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT, u2);
         Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT, u1);
 
+//        userRepository.saveAll(Arrays.asList(u1, u2));
+//        orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+
         userRepository.saveAll(Arrays.asList(u1, u2));
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
     }
 }

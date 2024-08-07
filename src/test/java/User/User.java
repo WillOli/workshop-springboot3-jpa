@@ -1,8 +1,8 @@
-package User;
+package Category;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
@@ -11,10 +11,10 @@ public class User implements Serializable {
     private String phone;
     private String password;
 
-    public User() {
+    public Category() {
     }
 
-    public User(Long id, String name, String email, String phone, String password) {
+    public Category(Long id, String name, String email, String phone, String password) {
         super();
         this.id = id;
         this.name = name;
@@ -79,7 +79,7 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        com.willdev.course.entities.User other = (com.willdev.course.entities.User) obj;
+        com.willdev.course.entities.Category other = (com.willdev.course.entities.Category) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

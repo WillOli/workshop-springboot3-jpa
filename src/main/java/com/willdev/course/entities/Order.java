@@ -33,6 +33,7 @@ public class Order implements Serializable {
         this.client = client;
     }
 
+
     public Long getId() {
         return id;
     }
